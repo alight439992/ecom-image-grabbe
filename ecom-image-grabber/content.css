@@ -1,0 +1,32 @@
+/* 悬浮按钮样式 */
+#img-grab-btn {
+  position: fixed !important;
+  right: 24px !important;
+  bottom: 24px !important;
+  z-index: 999999 !important;
+  padding: 12px 22px !important;
+  background: linear-gradient(135deg, #4f7cff, #6c5ce7) !important;
+  color: #fff !important;
+  font-size: 14px !important;
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif !important;
+  border: none !important;
+  border-radius: 28px !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 16px rgba(79, 124, 255, 0.4) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  line-height: 1.4 !important;
+}
+
+#img-grab-btn:hover {
+  transform: scale(1.08) !important;
+  box-shadow: 0 6px 20px rgba(79, 124, 255, 0.55) !important;
+}
+
+#img-grab-btn:active {
+  transform: scale(0.96) !important;
+}
+
+#img-grab-btn.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}

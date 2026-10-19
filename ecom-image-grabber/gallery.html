@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>图提取 - 图片画廊</title>
+  <link rel="stylesheet" href="gallery.css" />
+</head>
+<body>
+  <!-- 顶部工具栏 -->
+  <header class="toolbar">
+    <div class="toolbar-left">
+      <h1 class="logo">图提取</h1>
+      <span class="count-info">共 <b id="totalCount">0</b> 张，已选 <b id="selectedCount">0</b> 张</span>
+    </div>
+    <div class="toolbar-right">
+      <button id="selectAllBtn" class="btn btn-ghost">全选</button>
+      <button id="invertBtn" class="btn btn-ghost">反选</button>
+      <button id="downloadBtn" class="btn btn-primary">下载选中</button>
+    </div>
+  </header>
+
+  <!-- 进度提示条 -->
+  <div id="progressBar" class="progress-bar hidden">
+    <span id="progressText">准备下载...</span>
+  </div>
+
+  <!-- 图片网格 -->
+  <main id="gallery" class="gallery"></main>
+
+  <script src="gallery.js"></script>
+</body>
+</html>

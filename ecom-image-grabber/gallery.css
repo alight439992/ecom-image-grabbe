@@ -1,0 +1,157 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #f5f6fa;
+  color: #2d3436;
+  min-height: 100vh;
+}
+
+/* ===== 顶部工具栏 ===== */
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 28px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #4f7cff, #6c5ce7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.count-info {
+  font-size: 13px;
+  color: #636e72;
+}
+.count-info b { color: #4f7cff; }
+
+.toolbar-right {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-ghost {
+  background: #f0f1f5;
+  color: #2d3436;
+}
+.btn-ghost:hover { background: #e4e6ec; }
+
+.btn-primary {
+  background: linear-gradient(135deg, #4f7cff, #6c5ce7);
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(79, 124, 255, 0.35);
+}
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 5px 14px rgba(79, 124, 255, 0.45); }
+.btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+/* ===== 进度条 ===== */
+.progress-bar {
+  position: sticky;
+  top: 60px;
+  z-index: 99;
+  padding: 10px 28px;
+  background: #4f7cff;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+}
+.hidden { display: none; }
+
+/* ===== 图片网格 ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  padding: 24px 28px;
+}
+
+.card {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  background: #eee;
+}
+
+.card .meta {
+  padding: 8px 12px;
+  font-size: 12px;
+  color: #636e72;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 复选框 */
+.card .checkbox {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: transparent;
+  transition: all 0.15s;
+}
+.card.checked .checkbox {
+  background: #4f7cff;
+  border-color: #4f7cff;
+  color: #fff;
+}
+.card.checked {
+  outline: 3px solid #4f7cff;
+  outline-offset: -3px;
+}
+
+/* 空状态 */
+.empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 0;
+  color: #b2bec3;
+  font-size: 15px;
+}
